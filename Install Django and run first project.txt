@@ -1,0 +1,38 @@
+
+		Install Process
+	
+(1) Install Python: https://www.python.org/downloads/
+(2) Setting up a virtual environment:
+	-Open CMD
+	-Install Environment Wrapper: 
+		---- pip install virtualenvwrapper-win
+	-Create Environment:
+		---- mkvirtualenv Test(Environment Name)
+(3)Install Django:
+		---- pip install django
+		Check Version:- django-admin --version
+
+
+
+		Create Folder for all Django projects
+Open CMD: 
+1) workon test
+2) mkdir DjangoProjects
+
+
+
+		Create Project
+Open CMD: 
+1) workon test
+2) cd DjangoProjects(path)
+3) django-admin startproject ProjectName
+
+
+		Run Project
+Open CMD: 
+1) workon test
+2) cd DjangoProjects(path)
+3) cd ProjectName
+4) dir
+5) python manage.py runserver
+6) If server not runing: python manage.py migrate
