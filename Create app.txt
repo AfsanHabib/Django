@@ -1,0 +1,47 @@
+
+-Create app inside project and outside biultin project:
+#################
+django-admin startapp AppName
+#################
+-Create new urls.py file in new app
+-Go to settings.py (main project folder)
+-add newapp:
+################
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+    #Custom App
+    'newapp',
+]
+################
+-Go to urls.py (new project folder)
+---add path:
+######################
+from django.urls import path
+from . import views  # Import Views
+urlpatterns = [
+    path('', views.newapp),
+
+]
+##############
+-Include new app urls to main project urls
+-Go to urls.py (main project folder)
+################
+from django.urls import include, path
+################
+-Add new app
+##################
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.home),
+    path('about/', views.about),
+    path('contact/', views.contact),
+    #new app
+    path('newapp', include('newapp.urls') ),
+]
+####################
