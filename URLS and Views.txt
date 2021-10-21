@@ -1,0 +1,30 @@
+
+-Create views.py in project
+-Import HttpResponse and write logic in views.py:-
+##########################################
+from django.http import HttpResponse
+from django.shortcuts import render
+
+def home(request):
+    return HttpResponse("Home Page")
+def about(request):
+    return HttpResponse("About Page")
+def contact(request):
+    return HttpResponse("Contact Page")
+########################################
+
+-Go to urls.py file
+-import views.py:
+#################
+from .views import * 
+#################
+-add path in urlpatterns:
+#########################
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('home/', views.home),
+    #path('', views.home),---if want to set home page as home
+    path('about/', views.about),
+    path('contact/', views.contact),
+]
+###################################
