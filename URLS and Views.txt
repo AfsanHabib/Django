@@ -16,7 +16,7 @@ def contact(request):
 -Go to urls.py file
 -import views.py:
 #################
-from .views import * 
+from .import views
 #################
 -add path in urlpatterns:
 #########################
